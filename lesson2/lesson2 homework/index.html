@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+<script>
+
+    // 1. -  Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить, до якої четверті години попадає число
+    // (в першу, другу, третю или четверту частину години).
+
+     // let time = +prompt('Введіть число від 1 до 59');
+     //
+     // if(time <= 15){
+     //     console.log('Зараз 1 чверть години')
+     // }
+     //
+     // else if(time <= 30){
+     //    console.log('Зараз 2 чверть години')
+    // }
+    //
+    //  else if(time <= 45){
+    //    console.log('Зараз 3 чверть години')
+    //  }
+    //
+    //  else if(time <= 59) {
+    //    console.log('Зараз 4 чверть години')
+    //  }
+
+     //- 2. У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число (у першу, другу чи третю).
+     // let day = +prompt('Введіть будь який день місяця');
+     // if(day <= 10){
+     //     console.log('Зараз 1 половина');
+     // }
+     // else if(day <= 20) {
+     //     console.log('Зараз 2 половина місяця');
+     // }
+     //
+     // else if(day <= 31) {
+     //     console.log('Зараз 3 половина місяця');
+     // }
+
+
+    // 3. - У нас є змінна test, якщо  не дорівнює true, виведіть 'Вірно', інакше виведіть 'Неправильно'.
+    // Перевірте роботу скрипта при test, що дорівнює true, false. Напишіть два варіанти скрипта - з коротким записом(тернаркою)
+
+     let test = 'js';
+     if (test !== true)  {
+         /* test !== true (Вірно) , test == true (Неправильно) */
+         console.log('Вірно')
+     }
+     else {
+        console.log('Неправильно')
+     }
+
+    // 4. - Якщо змінна a не дорівнює нулю, виведіть 'Вірно', інакше виведіть 'Невірно'. Перевірте  скрипт при a, що дорівнює 1, 0, -3
+
+    let a = 1
+    if (a !== 0){
+        console.log('Вірно')
+    }
+
+    else{
+        console.log('Невірно')
+    }
+
+    // 5. - Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано на цей день.
+    // let week = prompt('День тижня на англійському')
+    // switch (week){
+    //     case 'monday':
+    //         console.log('Практикуватись');
+    //         break;
+    //
+    //     case 'tuesday':
+    //         console.log('Прочитати книгу');
+    //         break;
+    //
+    //     case 'wednesday':
+    //         console.log('Пробіжка');
+    //         break;
+    //
+    //     case 'thursday':
+    //         console.log('Ділова зустріч');
+    //         break;
+    //
+    //     case 'friday':
+    //         console.log('Похід в магазин');
+    //         break;
+    //
+    //     case 'saturday':
+    //         console.log('Налаштування програми');
+    //         break;
+    //
+    //     case 'sunday':
+    //         console.log('Відпочинок');
+    //         break;
+    //
+    //         default:
+    //             console.log(Error)
+    // }
+
+     // 6. - Потрібно визначити Високосний рік чи ні. Високосні роки діляться націло на 4.
+     // let year = +prompt('Введіть кількість днів в цьому році');
+
+     // if(year % 4 === 0){
+     //    console.log('Високосний');
+     // }
+
+    // else {
+     //    console.log('Не високосний');
+     // }
+
+
+
+
+
+    // 7. - Використовуючи конструкцію if..else, напишіть код, який запитуватиме: „Яка «офіційна» назва JavaScript?“
+    // Якщо користувач вводить «ECMAScript», то показати: «Правильно!», інакше – відобразити: «Не знаєте? ECMAScript!
+
+     //let officialName = prompt('Яка «офіційна» назва JavaScript?');
+     //if(officialName === 'ECMAScript'){
+     //   alert('Правильно!');
+     // }
+    //
+    // else{
+     //  alert('Не знаэте? ECMAScript!');
+     // }
+</script>
+</body>
+</html>
