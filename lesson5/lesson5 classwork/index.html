@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lesson5 CW</title>
+</head>
+<body>
+
+<script>
+
+    // Всі функції повинні бути описані стрілочним типом!!!!
+
+  // 1.  створити функцію яка приймає три числа та виводить найменьше. (Без Math.min!)
+
+ // const numberMin = (number1, number2, number3) => {
+ //     if (number1 < number2 && number1 < number3){
+ //         console.log(number1);
+ //     }
+ //     else if (number2 < number1 && number2 < number3){
+ //         console.log(number2);
+ //     }
+ //
+ //     else {
+ //         console.log(number3);
+ //     }
+ // }
+ // numberMin(158,10,15);
+
+
+
+   // 2. - створити функцію яка приймає три числа та виводить найбільше. (Без Math.max!)
+
+   // const numberMax = (number1, number2, number3) =>{
+   //     if (number1 > number2 && number1 > number3){
+   //         console.log(number1);
+   //     }
+   //     else if (number2 > number1 && number2 > number3){
+   //         console.log(number2);
+   //     }
+   //     else{
+   //         console.log(number3)
+   //     }
+   // }
+   // numberMax(130,100,150);
+
+
+
+  // 3. - створити функцію яка повертає найбільше число з масиву
+
+  // let maxArr = [10,200,30]
+  // const arrayMax = (array) =>{
+  //     let max = array[0];
+  //     for (const number of array) {
+  //         if (number > max){
+  //             max = number;
+  //         }
+  //     }
+  //     return max;
+  // }
+  // console.log(arrayMax(maxArr));
+
+
+  // 4.- створити функцію яка повертає найменше число з масиву
+
+  // let minArr = [100,200,300]
+  // const arrayMin = (array) => {
+  //     let min = array [0]
+  //     for (const number of array) {
+  //         if (number < min){
+  //             min = number;
+  //         }
+  //     }
+  //     return min;
+  // }
+  // console.log(arrayMin(minArr));
+
+
+  // 5. - створити функцію яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад [1,2,10]->13
+
+  // let sumArray = [100,200,300];
+  // const sumArr = (nums) =>{
+  //     let result = 0;
+  //     for (const num of nums) {
+  //         result= result + num;
+  //     }
+  //     return result
+  // }
+  // console.log(sumArr(sumArray));
+
+
+  // 6. - створити функцію яка приймає масив чисел та повертає середнє арифметичне його значень.
+
+  // let sumArr = [100,200,300];
+  // const sumArray = (nums) =>{
+  //     let result = 0
+  //     for (const num of nums) {
+  //         result = result + num / 3
+  //
+  //     }
+  //     return result;
+  // }
+  // console.log(sumArray(sumArr));
+
+
+
+  // 7. - створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше (Math використовувати заборонено);
+
+  // const minmaxArr = (...arguments) =>{
+  //     let min = arguments[0];
+  //     let max = arguments[0];
+  //     for (const argument of arguments) {
+  //        if (argument < min){
+  //            min = argument;
+  //        }
+  //        if (argument > max){
+  //            max = argument;
+  //        }
+  //     }
+  //     console.log(max)
+  //     return min;
+  // }
+  // minmaxArr(100,200,300);
+
+
+  // 8. - створити функцію яка заповнює масив рандомними числами
+  // (цей код генерує рандомні числа в діапазоні від 0 до 100 - Math.round(Math.random()*100)) та виводить його.
+
+  // const random = (length) =>{
+  //     let arr = []
+  //     for (let i = 0; i < length; i++) {
+  //         arr.push(Math.floor(Math.random()*100))
+  //     }
+  //     return arr;
+  // }
+// console.log(random(3));
+
+
+
+  // 9. - створити функцію яка заповнює масив рандомними числами в діапазоні від 0 до limit. limit - аргумент, який характеризує кінцеве значення діапазону.
+
+  // const random = (length, limit) => {
+  //     let arr = []
+  //     for (let i = 0; i < length; i++) {
+  //         arr.push(Math.round(Math.random()*limit))
+  //     }
+  //     return arr;
+  //
+  // }
+  // console.log(random(5,200));
+
+
+
+  // 10. - Функція приймає масив та робить з нього новий масив в зворотньому порядку. [1,2,3] -> [3, 2, 1].
+
+  // let  arr = [1,2,3];
+  // let newArr = [];
+  // const reverse = (arr) =>{
+  //     for (let i = arr.length - 1, a=0; i >= 0;a++ , i--) {
+  //         newArr[a] = arr[i];
+  //     }
+  //     return newArr
+  // }
+  // console.log(reverse(arr));
+
+
+</script>
+
+</body>
+</html>
