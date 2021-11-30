@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lesson7 HW</title>
+</head>
+<body>
+
+
+<script>
+
+
+    // 1. - Створити функцію конструктор для об'єктів User з полями id, name, surname , email, phone
+
+   //  function  User (id,name,surname,email,phone){
+   //
+   //      this.id = id;
+   //          this.name = name;
+   //          this.surname = surname;
+   //      this.email = email;
+   //      this.phone = phone;
+   //  }
+   //
+   //  // створити пустий масив, наповнити його 10 об'єктами new User(....)
+   //
+   // let users = [
+   //     new User (3,'Artem','Kilik', '21ww@gmail.com', '+380931111111'),
+   //     new User (2,'Artem','Kilik', '22qq@gmail.com', '+380931111111'),
+   //     new User (8,'Artem','Kilik', '23ee@gmail.com', '+380931111111'),
+   //     new User (4,'Artem','Kilik', '24rr@gmail.com', '+380931111111'),
+   //     new User (9,'Artem','Kilik', '25tt@gmail.com', '+380931111111'),
+   //     new User (6,'Artem','Kilik', '26yy@gmail.com', '+380931111111'),
+   //     new User (7,'Artem','Kilik', '27uu@gmail.com', '+380931111111'),
+   //     new User (5,'Artem','Kilik', '28ii@gmail.com', '+380931111111'),
+   //     new User (10,'Artem','Kilik', '29oo@gmail.com', '+380931111111'),
+   //     new User (1,'Artem','Kilik', '230pp@gmail.com', '+380931111111')
+   // ]
+   //  console.log(users)
+
+
+    // 2.  Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
+
+    // let filterUser = users.filter(item => {
+    //     if (item.id % 2 === 0){
+    //     return item
+    //     }
+    // }
+    // )
+    // console.log(filterUser);
+
+    //-----------------------------------------------------------
+    // let filterUser = users.filter(value => value.id %2 === 0);
+    // console.log(filterUser);
+
+
+    // 3. - Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
+
+    // users.sort((a,b) => a.id - b.id);
+    // console.log(users);
+
+
+    // 4. - створити класс для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
+
+    class Client {
+       constructor(id,name,surname,email,phone,order){
+           this.id = id;
+           this.name = name;
+           this.surname = surname;
+           this.email = email;
+           this.phone = phone;
+           this.order = order;
+       }
+    }
+
+    // створити пустий масив, наповнити його 10 об'єктами Client
+
+    let clients = [
+        new Client(1,'Harry','Potter', 'har@gmail.com', '+380931111111' , ['jacket' , 'stick']),
+        new Client(1,'All','Pit', 'all@gmail.com', '+380931111112' , ['ball']),
+        new Client(1,'Cody','Que', 'cody@gmail.com', '+380931111113' , ['equipment' , 'laptop']),
+        new Client(1,'Zack','Dibli', 'zack@gmail.com', '+380931111114' , ['keyboard']),
+        new Client(1,'Aston','Migi', 'ast@gmail.com', '+380931111115' , ['knife' , 'charger']),
+        new Client(1,'Artos','Lich', 'art@gmail.com', '+380931111116' , ['sword' , 'armour']),
+        new Client(1,'Ballamy','Blake', 'ball@gmail.com', '+380931111117' , ['food']),
+        new Client(1,'Ursula','Corbero', 'urus@gmail.com', '+380931111118' , ['weapon' , 't-shirt']),
+        new Client(1,'Eliza','Tyler', 'El@gmail.com', '+380931111119' , ['products']),
+        new Client(1,'Tasya','Eles', 'tasya@gmail.com', '+380931111110' , ['bow' , 'arrows'])
+
+    ]
+
+    console.log(clients);
+
+    // - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
+
+    let sortClients = clients.sort((a,b) => a.order.length - b.order.length);
+    console.log(sortClients);
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
