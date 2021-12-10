@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lesson10 CW</title>
+</head>
+<style>
+    *{
+        margin: 3px;
+    }
+
+    /*#btn{*/
+    /*    margin-left: 5px;*/
+    /*}*/
+
+</style>
+<body>
+
+<!--<form action="" name='form1'>-->
+<!--    <input type="text" name="i11"/>-->
+<!--    <input type="text" name="i12"/>-->
+<!--</form>-->
+
+<!--<form action="" name="form2">-->
+<!--    <input type="text" name="i21"/>-->
+<!--    <input type="text" name="i22"/>-->
+<!--</form>-->
+
+<!--<button id="btn">click</button>-->
+
+<!--<form name="creator">-->
+<!--    <input type="number" name="rows"/>-->
+<!--    <input type="number" name="columns"/>-->
+<!--    <input type="text" name="information"/>-->
+<!--    <button>click</button>-->
+
+<!--</form>-->
+
+
+<input type="text" id="bad">
+<button id="btn">CLICK</button>
+<script>
+
+    // - створити 2 форми  по 2 інпути в кожній. ствоирити кнопку при кліку на яку считується та виводиться на консоль інформація з цих 2х форм.
+    //     Кнопка повинна лежати за межами форм (Щоб ьуникнути  перезавантаження сторінки)
+    // Доступ до інпутів через Forms API. Отже дайте формі та інпутам всі необхідні атрибути.
+
+    // document.getElementById('btn').onclick = function (){
+    //     let i11 = document.forms.form1.i11.value
+    //     let i12 = document.forms.form1.i12.value
+    //     let i21 = document.forms.form2.i21.value
+    //     let i22 = document.forms.form2.i22.value
+    //     console.log(i11, i12 , i21 ,i22)
+    // };
+
+
+
+    // - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+    // При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+    // (Додатковачастина для завдання)
+
+    // let form = document.forms['creator'];
+    // form.onsubmit = function (e){
+    //     e.preventDefault();
+    //     let rows = +form.rows.value
+    //     let columns = +form.columns.value
+    //     let information = form.information.value
+    //     console.log(rows,columns,information);
+    //
+    //     let table = document.createElement('table');
+    //
+    //     for (let i = 0; i < rows; i++) {
+    //         let tr  = document.createElement('tr');
+    //         for (let j = 0; j < columns; j++) {
+    //             let td = document.createElement('td')
+    //             td.innerText = information
+    //             tr.appendChild(td)
+    //
+    //         }
+    //         table.appendChild(tr);
+    //     }
+    //
+    //     document.body.appendChild(table)
+    // };
+
+
+
+
+    // - Сворити масив не цензцрних слів.
+    //     Сворити інпут текстового типу.
+    //     Якщо людина вводить слово і воно міститься в масиві не цензурних слів
+    // кинути алерт з попередженням.
+    //     Перевірку робити при натисканні на кнопку
+
+    // let badWords = ['noob' , 'jerk'];
+    // let btn = document.getElementById('btn')
+    // btn.onclick = function () {
+    //     let word = document.getElementById('bad').value;
+    //     for (const badWord of badWords) {
+    //         if (badWord === word) {
+    //             alert('obscene language')
+    //             return;
+    //         }
+    //     }
+    //
+    // };
+
+
+
+    // - Сворити масив не цензцрних слів.
+    //     Сворити інпут текстового типу.
+    //     Потрібно перевіряти чи не містить ціле речення в собі погані слова.
+    //     Кинути алерт з попередженням у випадку якщо містить.
+    //     Перевірку робити при натисканні на кнопку
+
+    let badWords = ['noob' , 'jerk'];
+    let btn = document.getElementById('btn')
+    btn.onclick = function () {
+        let word = document.getElementById('bad').value;
+        for (const badWord of badWords) {
+            if (word.includes(badWord)) {
+                alert('obscene language')
+                return;
+            }
+        }
+
+    };
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

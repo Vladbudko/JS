@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lesson11 HW</title>
+</head>
+
+<style>
+    form {
+        margin-top: 10px;
+    }
+</style>
+
+<body>
+
+<form action="" name="userForm">
+    <label>name
+        <input name="name" type="text"/>
+    </label>
+    <label>age
+        <input name="age" type="number"/>
+    </label>
+
+    <button id="btn">send</button>
+
+    <br>
+</form>
+
+<form action="" name="carForm">
+<label>model
+    <input name="model" type="text">
+</label>
+
+<label> type
+    <input name="type" type="text">
+</label>
+
+<label>volume
+    <input name="volume" type="number">
+</label>
+
+    <button id="btn2">send</button>
+</form>
+
+
+<script>
+
+    // 1. -створити форму з інпутами для name та age.
+    // При відправці форми записати об'єкт в localstorage
+
+    let name = document.forms.userForm.name;
+    let age = document.forms.userForm.age;
+    let btn = document.getElementById('btn');
+    let key = 'key';
+
+    let save = (userName, userAge) => {
+        let user = {
+            name: userName,
+            age: userAge
+        };
+        localStorage.setItem(key, JSON.stringify(user));
+    };
+
+    btn.onclick = () => {
+        save(name.value, age.value);
+    }
+
+    // 2. -створити форму з інпутами для model,type та volume автівки.
+    // при відпарвці форми об'єкти зберігаються в масиві в локальному сховищі.
+
+    let model = document.forms.carForm.model;
+    let type = document.forms.carForm.type;
+    let volume = document.forms.carForm.volume;
+    let  btn2 = document.getElementById('btn2');
+    let key2 = 'key2';
+
+    let save2 = (carModel, carType , carVolume) => {
+        let arr = JSON.parse(localStorage.getItem(key2)) || [];
+
+        arr.push({carModel, carType, carVolume})
+        localStorage.setItem(key2, JSON.stringify(arr))
+    };
+
+    btn2.onclick = () =>{
+        save2(model.value , type.value , volume.value)
+    }
+
+
+</script>
+
+
+</body>
+</html>
