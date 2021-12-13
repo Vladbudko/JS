@@ -14,14 +14,16 @@
         }
 
         .wraper {
-            width: 300px;
+            width: 1300px;
             justify-content: center;
-            flex-wrap: wrap;
+            display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
+
         }
 
         .post {
-            width: 220px;
+            width: 200px;
             height: 260px;
             margin: 10px;
             padding: 10px;
@@ -36,7 +38,7 @@
         }
 
         .post:hover {
-            background: #d8e4ef;
+            background: palegoldenrod ;
             transition: .3s;
             transform: rotateY(10grad);
         }
@@ -49,57 +51,57 @@
             height: 50px;
         }
 
-        .comment {
-            width: 220px;
-            height: 260px;
-            margin: 10px;
-            padding: 10px;
-            border: 1px solid silver;
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-            margin-top: 30px;
-        }
+        /*.comment {*/
+        /*    width: 220px;*/
+        /*    height: 260px;*/
+        /*    margin: 10px;*/
+        /*    padding: 10px;*/
+        /*    border: 1px solid silver;*/
+        /*    border-radius: 15px;*/
+        /*    display: flex;*/
+        /*    flex-direction: column;*/
+        /*    align-items: center;*/
+        /*    cursor: pointer;*/
+        /*    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);*/
+        /*    margin-top: 30px;*/
+        /*}*/
 
-        .comment:hover {
-            background: #d8e4ef;
-            transition: .3s;
-            transform: rotateY(10grad);
-        }
+        /*.comment:hover {*/
+        /*    background: #d8e4ef;*/
+        /*    transition: .3s;*/
+        /*    transform: rotateY(10grad);*/
+        /*}*/
 
-        .comment h3 {
-            margin: 0;
-        }
+        /*.comment h3 {*/
+        /*    margin: 0;*/
+        /*}*/
 
-        .comment h4 {
-            height: 50px;
-        }
+        /*.comment h4 {*/
+        /*    height: 50px;*/
+        /*}*/
 
-        p{
-            left: 300px;
-            margin-top: -1px;
-            position: relative;
-            color: red;
-            font-size: x-large;
+        /*p{*/
+        /*    left: 300px;*/
+        /*    margin-top: -1px;*/
+        /*    position: relative;*/
+        /*    color: red;*/
+        /*    font-size: x-large;*/
 
-        }
+        /*}*/
 
-        p.name{
-            left: 500px;
-        }
+        /*p.name{*/
+        /*    left: 500px;*/
+        /*}*/
 
     </style>
 <body>
-<div>
-    <p>POSTS</p>
-</div>
+<!--<div>-->
+<!--    <p>POSTS</p>-->
+<!--</div>-->
 
-<div>
-    <p class="name">COMMENTS</p>
-</div>
+<!--<div>-->
+<!--    <p class="name">COMMENTS</p>-->
+<!--</div>-->
 <script>
     // //  1.
     //  // Отримати відповідь з цього ресурсу відповідь, та вивести в документ об'єкти. Застилізувати, за допомоги css, щоб отримати 5 елементів в рядку.
@@ -135,24 +137,24 @@
 
     // https://jsonplaceholder.typicode.com/comments
 
-    fetch('https://jsonplaceholder.typicode.com/comments')
-        .then(response => response.json())
-        .then(comments => {
-            let wraper = document.createElement('div');
-            wraper.classList.add('wraper');
-            for (const comment of comments) {
-                let divCard = document.createElement('div');
-                divCard.classList.add('comment');
-                divCard.innerHTML = `
-                        <h3>ID: ${comment.id}</h3>
-                        <h4>Name: ${comment.name}</h4>
-                        <h5>Email: ${comment.email}</h5>
-                        <h6>Body: ${comment.body}</h6>
-                        `;
-                wraper.appendChild(divCard);
-                document.body.appendChild(wraper);
-            }
-        })
+    // fetch('https://jsonplaceholder.typicode.com/comments')
+    //     .then(response => response.json())
+    //     .then(comments => {
+    //         let wraper = document.createElement('div');
+    //         wraper.classList.add('wraper');
+    //         for (const comment of comments) {
+    //             let divCard = document.createElement('div');
+    //             divCard.classList.add('comment');
+    //             divCard.innerHTML = `
+    //                     <h3>ID: ${comment.id}</h3>
+    //                     <h4>Name: ${comment.name}</h4>
+    //                     <h5>Email: ${comment.email}</h5>
+    //                     <h6>Body: ${comment.body}</h6>
+    //                     `;
+    //             wraper.appendChild(divCard);
+    //             document.body.appendChild(wraper);
+    //         }
+    //     })
 </script>
 
 </body>
