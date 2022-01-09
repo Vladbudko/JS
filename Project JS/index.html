@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project JS</title>
+</head>
+
+<style>
+
+    body{
+        background: url("photu/88-885847_js-react-hooks.jpg") no-repeat ;
+
+    }
+
+    .post{
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        width: 150px;
+        height: 150px;
+        align-items: center;
+        text-align: center;
+        margin-top: 80px;
+        border: 3px solid black;
+        color: salmon;
+
+    }
+
+    .wraper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        column-gap: 150px;
+        margin-top: 20px;
+
+
+    }
+
+    button{
+        background: cornflowerblue;
+        border: 3px solid red;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+
+
+
+</style>
+
+<body>
+
+
+<!--<form action="user-details.html" target="_blank">-->
+<!--    <button class="btn">Переход по ссылке</button>-->
+<!--</form>-->
+
+
+<script>
+
+//     В index.html
+//     1 получить массив объектов user с endpoint`а https://jsonplaceholder.typicode.com/users
+// 2 Вывести id,name всех user в index.html. Отдельный блок для каждого user.
+// 3 Добавить каждому блоку кнопку/ссылку , при клике на которую происходит переход на страницу user-details.html, которая имеет детальную информацию про объект на который кликнули
+
+
+
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => {
+        return response.json();
+    })
+    .then(posts => {
+        let wraper = document.createElement('div');
+        wraper.classList.add('wraper');
+        for (const post of posts) {
+            let divCard = document.createElement('div');
+            divCard.classList.add('post');
+            let btn = document.createElement('button')
+            btn.innerText = 'CLICK'
+            btn.onclick = function (){
+                let userDetails = location.href='user-details.html'
+                let userDETAILS =  JSON.parse(localStorage.getItem('userDETAILS')) || [];
+                userDETAILS.push(post)
+                localStorage.setItem('userDETAILS', JSON.stringify(userDETAILS))
+            }
+            divCard.innerHTML = `
+                        <h3>ID: ${post.id}</h3>
+                        <h4>Name: ${post.name}</h4>
+                        `;
+            wraper.appendChild(divCard);
+            divCard.appendChild(btn)
+            document.body.appendChild(wraper);
+        }
+    });
+
+</script>
+
+
+</body>
+</html>

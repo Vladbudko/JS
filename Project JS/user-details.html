@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>user-details</title>
+</head>
+
+<style>
+    div{
+        margin-top: 20px;
+        border: 3px solid black;
+        height: 100px;
+
+    }
+
+    button{
+        display: flex;
+        margin-top: 5px;
+        font-size: large;
+        cursor: pointer;
+
+    }
+</style>
+
+<body>
+
+<script>
+
+    let userDETAILS = JSON.parse(localStorage.getItem('userDETAILS'))
+    console.log(userDETAILS)
+    for (const userDETAIL of userDETAILS) {
+        let div = document.createElement('div')
+        div.innerText = JSON.stringify(userDETAIL)
+        document.body.appendChild(div)
+
+
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(response => {
+                return response.json();
+            })
+
+            .then(posts => {
+                let btn2 = document.createElement('button')
+                for (const post of posts) {
+                    btn2.innerText = 'CLICK'
+                    btn2.onclick = function () {
+                        let postDetails = location.href = 'post-details.html'
+                        let postDETAILS = JSON.parse(localStorage.getItem('postDETAILS')) || [2];
+                        postDETAILS.push(post)
+                        localStorage.setItem('postDETAILS', JSON.stringify(postDETAILS))
+                    }
+
+                    div.appendChild(btn2)
+
+                }
+
+
+            });
+
+
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(response => {
+                return response.json();
+            })
+            .then(posts => {
+                let btn = document.createElement('button')
+                btn.innerText = 'post of current user'
+                for (const post of posts) {
+                    let divCard = document.createElement('div');
+                    divCard.classList.add('post');
+                    btn.onclick = function () {
+                        divCard.innerText = `
+                        <h3>Title: ${post.title}</h3>
+                        `;
+                    }
+                }
+
+
+                div.appendChild(btn);
+
+                // fetch('https://jsonplaceholder.typicode.com/comments')
+                //     .then(response => {
+                //         return response.json();
+                //     })
+                //     .then(posts2 => {
+                //
+                //         for (const post2 of posts2) {
+                //             let divCard2 = document.createElement('div');
+                //             divCard2.classList.add('post');
+                //
+                //             divCard2.innerHTML = `
+                //         ID: ${post2.id}
+                //         Name: ${post2.name}
+                //         Email: ${post2.email}
+                //         `;
+                //
+                //             div.appendChild(divCard2);
+                //         }
+                //     });
+
+            });
+    }
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
